@@ -6,21 +6,14 @@
        xsi:schemaLocation="
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="triangle" class = "main.java.Triangle" name="triangle-name">
-        <property name="points" >
-            <list>
-                <ref bean="zeroPoint"/>
-                <ref bean="pointB"/>
-                <ref bean="pointC"/>
-            </list>
-        </property>
+    <bean id="triangle" class = "main.java.Triangle" autowire="byName">
 
         <!--<property name = "pointA" ref="zeroPoint" />-->
         <!--<property name = "pointB" ref ="pointB"/>-->
         <!--<property name = "pointC" ref ="pointC"/>-->
     </bean>
 
-    <bean  id ="zeroPoint" class="main.java.Point">
+    <bean  id ="pointA" class="main.java.Point">
         <property name = "x" value = "0"></property>
         <property name="y" value="0"></property>
     </bean>
