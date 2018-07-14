@@ -1,9 +1,14 @@
 package main.java;
 
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.FileSystemResource;
+
 class DrawingApp{
     public static void main(String[] args) {
-        Triangle triangle = new Triangle();
+        BeanFactory myBeanFactory = new XmlBeanFactory(new FileSystemResource("/home/arrow/IdeaProjects/drawing-app/drawing-app/src/main/resources/spring.xml"));
 
+        main.java.Triangle triangle = (main.java.Triangle)myBeanFactory.getBean("triangle");
         triangle.draw();
 
     }
