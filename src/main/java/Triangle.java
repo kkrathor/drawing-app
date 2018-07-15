@@ -1,35 +1,42 @@
 package main.java;
 
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Bean;
 
 import java.util.List;
 
-class Triangle{
+class Triangle implements BeanNameAware, ApplicationContextAware {
 
     private main.java.Point pointA;
-    private Point pointB;
-    private Point pointC;
+    private main.java.Point pointB;
+    private main.java.Point pointC;
 
-    public Point getPointA() {
+    private ApplicationContext context = null;
+
+    public main.java.Point getPointA() {
         return pointA;
     }
 
-    public void setPointA(Point pointA) {
+    public void setPointA(main.java.Point pointA) {
         this.pointA = pointA;
     }
 
-    public Point getPointB() {
+    public main.java.Point getPointB() {
         return pointB;
     }
 
-    public void setPointB(Point pointB) {
+    public void setPointB(main.java.Point pointB) {
         this.pointB = pointB;
     }
 
-    public Point getPointC() {
+    public main.java.Point getPointC() {
         return pointC;
     }
 
-    public void setPointC(Point pointC) {
+    public void setPointC(main.java.Point pointC) {
         this.pointC = pointC;
     }
 
@@ -40,5 +47,14 @@ class Triangle{
         System.out.println("Point = ( " + pointC.getX() + ", " + pointC.getY() + ")");
 
         System.out.println("Triangle with list of 3 points drawn");
+    }
+
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.context = applicationContext;
+        System.out.println(" Application context ware implemented");
+    }
+
+    public void setBeanName(String s) {
+        System.out.println("Bean name is :" + s);
     }
 }
