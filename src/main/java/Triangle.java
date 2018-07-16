@@ -66,7 +66,7 @@ class Triangle implements ApplicationContextAware {
         System.out.println("My init method called for triangle");
     }
 
-    public void myDestroy(){
+    public void cleanUp(){
         System.out.println("Destroy method called");
     }
 }
