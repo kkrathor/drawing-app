@@ -6,11 +6,32 @@
        xsi:schemaLocation="
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="triangle" class = "main.java.Triangle" autowire="byName">
 
-        <!--<property name = "pointA" ref="zeroPoint" />-->
+    <bean id = "parent-triangle"  class="main.java.Triangle" abstract="true">
+        <property name="points" >
+            <list >
+                <ref bean ="pointA"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="triangle" class = "main.java.Triangle" parent="parent-triangle">
+        <property name="points" >
+            <list merge="true">
+                <ref bean="pointB"/>
+            </list>
+        </property>
+        <!--<property name = "pointA" ref="PointA" />-->
         <!--<property name = "pointB" ref ="pointB"/>-->
         <!--<property name = "pointC" ref ="pointC"/>-->
+    </bean>
+
+    <bean id = "triangle2" class="main.java.Triangle" parent="triangle">
+        <property name="points" >
+            <list merge="true">
+                <ref bean="pointC"></ref>
+            </list>
+        </property>
     </bean>
 
     <bean  id ="pointA" class="main.java.Point">

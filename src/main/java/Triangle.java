@@ -10,41 +10,27 @@ import java.util.List;
 
 class Triangle implements BeanNameAware, ApplicationContextAware {
 
-    private main.java.Point pointA;
-    private main.java.Point pointB;
-    private main.java.Point pointC;
+
+    List<main.java.Point> points;
+//    private main.java.Point pointA;
+//    private main.java.Point pointB;
+//    private main.java.Point pointC;
 
     private ApplicationContext context = null;
 
-    public main.java.Point getPointA() {
-        return pointA;
+    public List<main.java.Point> getPoints() {
+        return points;
     }
 
-    public void setPointA(main.java.Point pointA) {
-        this.pointA = pointA;
-    }
-
-    public main.java.Point getPointB() {
-        return pointB;
-    }
-
-    public void setPointB(main.java.Point pointB) {
-        this.pointB = pointB;
-    }
-
-    public main.java.Point getPointC() {
-        return pointC;
-    }
-
-    public void setPointC(main.java.Point pointC) {
-        this.pointC = pointC;
+    public void setPoints(List<main.java.Point> points) {
+        this.points = points;
     }
 
     public void draw(){
 
-        System.out.println("Point = ( " + pointA.getX() + ", " + pointA.getY() + ")");
-        System.out.println("Point = ( " + pointB.getX() + ", " + pointB.getY() + ")");
-        System.out.println("Point = ( " + pointC.getX() + ", " + pointC.getY() + ")");
+        System.out.println("Point = ( " + points.get(0).getX() + ", " + points.get(0).getY() + ")");
+        System.out.println("Point = ( " + points.get(1).getX() + ", " + points.get(1).getY() + ")");
+        System.out.println("Point = ( " + points.get(2).getX() + ", " + points.get(2).getY() + ")");
 
         System.out.println("Triangle with list of 3 points drawn");
     }
