@@ -7,7 +7,7 @@
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="triangle" class = "main.java.Triangle" >
+    <bean id="triangle" class = "main.java.Triangle" init-method="myInit" destroy-method="myDestroy">
 
         <property name = "pointA" ref="pointA" />
         <property name = "pointB" ref ="pointB"/>

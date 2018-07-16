@@ -1,14 +1,9 @@
 package main.java;
 
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanNameAware;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.context.annotation.Bean;
-
-import org.springframework.beans.factory.InitializingBean;
-
-import java.util.List;
 
 class Triangle implements ApplicationContextAware {
 
@@ -57,5 +52,21 @@ class Triangle implements ApplicationContextAware {
 
     public void setBeanName(String s) {
         System.out.println("Bean name is :" + s);
+    }
+/*
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("Initializing Bean init method is called");
+    }
+
+    public void destroy() throws Exception {
+        System.out.println("Desposablebean destory method called");
+    }
+    */
+    public void myInit(){
+        System.out.println("My init method called for triangle");
+    }
+
+    public void myDestroy(){
+        System.out.println("Destroy method called");
     }
 }
