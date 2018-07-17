@@ -28,8 +28,7 @@
     </bean>
 
     <bean id="circle" class = "main.java.Circle" >
-        <property name = "center" ref="pointA" />
-
+        <!--<property name = "center" ref="pointA" />-->
     </bean>
 
     <bean class="main.java.MyBeanFactoryPP"/>
@@ -37,5 +36,6 @@
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
         <property name = "locations" value="classpath:pointsconfig.properties"/>
     </bean>
+    <bean class = "org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
     <!--<bean class="main.java.DisplayNameBeanPostProcessor"/>-->
 </beans>
