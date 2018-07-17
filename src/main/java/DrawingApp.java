@@ -10,6 +10,5 @@ class DrawingApp{
         context.registerShutdownHook();
         main.java.Shape shape= (main.java.Shape)context.getBean("triangle");
         shape.draw();
-
     }
 }
