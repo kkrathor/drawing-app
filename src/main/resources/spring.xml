@@ -13,9 +13,9 @@
         <property name = "pointC" ref ="pointC"/>
     </bean>
 
-    <bean  id ="pointA" class="main.java.Point">
-        <property name = "x" value = "0"></property>
-        <property name="y" value="0"></property>
+    <bean  id ="pointA" class="main.java.Point" >
+        <property name = "x" value = "${pointA.pointX}"></property>
+        <property name="y" value="${pointA.pointY}"></property>
     </bean>
 
     <bean id = "pointB" class="main.java.Point">
@@ -28,5 +28,11 @@
     </bean>
 
     <alias name="triangle" alias="triangle-alias"/>
-    <bean class="main.java.DisplayNameBeanPostProcessor"/>
+
+    <bean class="main.java.MyBeanFactoryPP"/>
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
+        <property name = "locations" value="classpath:pointsconfig.properties"/>
+    </bean>
+    <!--<bean class="main.java.DisplayNameBeanPostProcessor"/>-->
 </beans>
