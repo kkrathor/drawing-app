@@ -47,7 +47,7 @@ class Triangle implements ApplicationContextAware {
 
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.context = applicationContext;
-        System.out.println(" Application context ware implemented");
+        System.out.println(" Application context aware implemented" );
     }
 
     public void setBeanName(String s) {
