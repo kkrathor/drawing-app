@@ -27,7 +27,10 @@
         <property name="y" value="0"></property>
     </bean>
 
-    <alias name="triangle" alias="triangle-alias"/>
+    <bean id="circle" class = "main.java.Circle" >
+        <property name = "center" ref="pointA" />
+
+    </bean>
 
     <bean class="main.java.MyBeanFactoryPP"/>
 

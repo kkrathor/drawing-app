@@ -5,7 +5,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-class Triangle implements ApplicationContextAware {
+class Triangle implements ApplicationContextAware, main.java.Shape {
 
     private main.java.Point pointA;
     private main.java.Point pointB;
@@ -37,7 +37,7 @@ class Triangle implements ApplicationContextAware {
     }
 
     public void draw(){
-
+        System.out.println("Triangle drawn");
         System.out.println("Point = ( " + pointA.getX() + ", " + pointA.getY() + ")");
         System.out.println("Point = ( " + pointB.getX() + ", " + pointB.getY() + ")");
         System.out.println("Point = ( " + pointC.getX() + ", " + pointC.getY() + ")");
