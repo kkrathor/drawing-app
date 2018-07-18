@@ -41,11 +41,14 @@ public class Circle implements main.java.Shape {
 
     @PreDestroy
     public void destroy(){
-        System.out.println("Init method called using annotation");
+        System.out.println("Init method destroyed using annotation");
     }
 
     public void draw() {
-        System.out.println("Circle drawn : \nPoint is (" + center.getX() + ", " + center.getY() + " )");
-        System.out.println(this.messageSource.getMessage("greeting", null, "Default Greeting", null));
+        System.out.println("Circle :" + this.messageSource.getMessage("drawing.circle", null,"Drawing Shape", null));
+//        System.out.println("Circle drawn : \nPoint is (" + center.getX() + ", " + center.getY() + " )");
+//        System.out.println(this.messageSource.getMessage("greeting", null, "Default Greeting", null));
+        System.out.println(this.messageSource.getMessage("drawing.point", new Object[]{center.getX(), center.getY()}, "Default poing message",null ));
+
     }
 }
