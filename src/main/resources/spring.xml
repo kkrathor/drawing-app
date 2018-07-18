@@ -49,4 +49,13 @@
     <context:annotation-config/>
     <context:component-scan base-package="main.java" />
 
+
+    <bean id="messageSource"  class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames" >
+            <list>
+                <value>mymessages</value>
+            </list>
+        </property>
+    </bean>
+
 </beans>

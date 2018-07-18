@@ -10,5 +10,7 @@ class DrawingApp{
         context.registerShutdownHook();
         main.java.Shape shape= (main.java.Shape)context.getBean("circle");
         shape.draw();
+//        System.out.println(context.getMessage("greeting", null, "Default Greeting", null));
+
     }
 }

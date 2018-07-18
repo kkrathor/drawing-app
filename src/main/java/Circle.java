@@ -1,6 +1,7 @@
 package main.java;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -12,6 +13,10 @@ public class Circle implements main.java.Shape {
 
     private main.java.Point center;
 
+
+    @Autowired
+    private MessageSource messageSource;
+
     public main.java.Point getCenter() {
         return center;
     }
@@ -19,6 +24,14 @@ public class Circle implements main.java.Shape {
     @Resource
     public void setCenter(main.java.Point center) {
         this.center = center;
+    }
+
+    public MessageSource getMessageSource() {
+        return messageSource;
+    }
+
+    public void setMessageSource(MessageSource messageSource) {
+        this.messageSource = messageSource;
     }
 
     @PostConstruct
@@ -33,5 +46,6 @@ public class Circle implements main.java.Shape {
 
     public void draw() {
         System.out.println("Circle drawn : \nPoint is (" + center.getX() + ", " + center.getY() + " )");
+        System.out.println(this.messageSource.getMessage("greeting", null, "Default Greeting", null));
     }
 }
